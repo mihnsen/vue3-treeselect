@@ -4642,9 +4642,19 @@ var directionMap = {
       });
     },
     onMenuOpen: function onMenuOpen() {
-      this.adjustMenuOpenDirection();
-      this.setupMenuSizeWatcher();
-      this.setupMenuResizeAndScrollEventListeners();
+      var _this = this;
+
+      this.$nextTick(function () {
+        var $menu = instance.getMenu();
+
+        if ($menu) {
+          _this.adjustMenuOpenDirection();
+
+          _this.setupMenuSizeWatcher();
+
+          _this.setupMenuResizeAndScrollEventListeners();
+        }
+      });
     },
     onMenuClose: function onMenuClose() {
       this.removeMenuSizeWatcher();
