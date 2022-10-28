@@ -4663,6 +4663,7 @@ var directionMap = {
       var _this = this;
 
       this.$nextTick(function () {
+        var instance = _this.instance;
         var $menu = instance.getMenu();
 
         if ($menu) {

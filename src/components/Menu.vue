@@ -221,6 +221,7 @@
 
       onMenuOpen() {
         this.$nextTick(() => {
+          const { instance } = this
           const $menu = instance.getMenu()
 
           if ($menu) {
