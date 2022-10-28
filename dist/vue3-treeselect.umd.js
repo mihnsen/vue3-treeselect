@@ -2637,7 +2637,9 @@ var instanceId = 0;
       return true;
     },
     getControl: function getControl() {
-      return this.$refs.control.$el;
+      var _this$$refs$control;
+
+      return (_this$$refs$control = this.$refs.control) === null || _this$$refs$control === void 0 ? void 0 : _this$$refs$control.$el;
     },
     getMenu: function getMenu() {
       var _ref$$refs$menu;
@@ -2663,8 +2665,10 @@ var instanceId = 0;
         var scrollToOption = function scrollToOption() {
           var $menu = _this14.getMenu();
 
-          var $option = $menu.querySelector(".vue-treeselect__option[data-id=\"".concat(node.id, "\"]"));
-          if ($option) scrollIntoView($menu, $option);
+          if ($menu) {
+            var $option = $menu.querySelector(".vue-treeselect__option[data-id=\"".concat(node.id, "\"]"));
+            if ($option) scrollIntoView($menu, $option);
+          }
         }; // In case `openMenu()` is just called and the menu is not rendered yet.
 
 

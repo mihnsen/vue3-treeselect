@@ -1367,7 +1367,7 @@ export default {
     },
 
     getControl() {
-      return this.$refs.control.$el
+      return this.$refs.control?.$el
     },
 
     getMenu() {
@@ -1388,8 +1388,10 @@ export default {
       if (this.menu.isOpen && scroll) {
         const scrollToOption = () => {
           const $menu = this.getMenu()
-          const $option = $menu.querySelector(`.vue-treeselect__option[data-id="${node.id}"]`)
-          if ($option) scrollIntoView($menu, $option)
+          if ($menu) {
+            const $option = $menu.querySelector(`.vue-treeselect__option[data-id="${node.id}"]`)
+            if ($option) scrollIntoView($menu, $option)
+          }
         }
 
         // In case `openMenu()` is just called and the menu is not rendered yet.
