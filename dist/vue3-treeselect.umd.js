@@ -4673,6 +4673,11 @@ var directionMap = {
       if (!instance.menu.isOpen) return;
       var $menu = instance.getMenu();
       var $control = instance.getControl();
+
+      if (!$menu || !$control) {
+        return;
+      }
+
       var menuRect = $menu.getBoundingClientRect();
       var controlRect = $control.getBoundingClientRect();
       var menuHeight = menuRect.height;

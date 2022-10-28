@@ -236,6 +236,11 @@
 
         const $menu = instance.getMenu()
         const $control = instance.getControl()
+
+        if (!$menu || !$control) {
+          return
+        }
+
         const menuRect = $menu.getBoundingClientRect()
         const controlRect = $control.getBoundingClientRect()
         const menuHeight = menuRect.height
