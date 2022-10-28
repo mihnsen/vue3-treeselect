@@ -2640,8 +2640,10 @@ var instanceId = 0;
       return this.$refs.control.$el;
     },
     getMenu: function getMenu() {
+      var _ref$$refs$menu;
+
       var ref = this.appendToBody ? this.$refs.portal.portalTarget : this;
-      var $menu = ref.$refs.menu.$refs.menu;
+      var $menu = (_ref$$refs$menu = ref.$refs.menu) === null || _ref$$refs$menu === void 0 ? void 0 : _ref$$refs$menu.$refs.menu;
       return $menu && $menu.nodeName !== '#comment' ? $menu : null;
     },
     setCurrentHighlightedOption: function setCurrentHighlightedOption(node) {
