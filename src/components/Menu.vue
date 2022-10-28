@@ -220,9 +220,15 @@
       },
 
       onMenuOpen() {
-        this.adjustMenuOpenDirection()
-        this.setupMenuSizeWatcher()
-        this.setupMenuResizeAndScrollEventListeners()
+        this.$nextTick(() => {
+          const $menu = instance.getMenu()
+
+          if ($menu) {
+            this.adjustMenuOpenDirection()
+            this.setupMenuSizeWatcher()
+            this.setupMenuResizeAndScrollEventListeners()
+          }
+        });
       },
 
       onMenuClose() {
